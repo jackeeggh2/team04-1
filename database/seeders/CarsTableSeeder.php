@@ -6,15 +6,8 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
 class CarsTableSeeder extends Seeder
-{
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
-    {}
-        public function generateRandomString($length = 10) {
+{ 
+    public function generateRandomString($length = 10) {
             $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
             $charactersLength = strlen($characters);
             $randomString = '';
@@ -22,15 +15,24 @@ class CarsTableSeeder extends Seeder
                 $randomString .= $characters[rand(0, $charactersLength - 1)];
             }
             return $randomString;
+        }
         
-
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run(){
       DB::table('cars')->insert([
+        'id'=>1,
         'type'=>'轎車',
-        'bid'=>'TOYOTA',
+        'bid'=>1,
         'horsepower'=>107,
-        'torque'=>14.3/4200,
+        'cc'=>1496,
+        'money'=>59.9,
+        'variable_s'=>7,
+        'seats'=>4,
+        'nationality'=>'JAPAN',
       ]);
-        //  $this->call(CarsTableSeeder::class);
-        //$this->call(BrandsTableSeeder::class);
-    }
+   }
 }

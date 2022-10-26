@@ -18,7 +18,7 @@ class CreateCarsTable extends Migration
             $table->string('type',191)->nullable(false)->comment('車型');
             $table->tinyInteger('bid')->unsigned()->nullable(false)->comment('品牌');
             $table->integer('horsepower')->nullable(true)->comment('馬力');
-            $table->integer('torque')->nullable(true)->comment('扭力');
+           
             $table->integer('cc')->nullable(false)->comment('CC數');
             $table->double('money')->unsigned()->nullable(false)->comment('價錢');
             $table->double('variable_s')->unsigned()->nullable(false)->comment('變速系統');
