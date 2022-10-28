@@ -14,13 +14,12 @@ class CreateCarsTable extends Migration
     public function up()
     {
         Schema::create('cars', function (Blueprint $table) {
-            $table->integer('id')->unsigned()->comment('編號');
+            $table->id()->unsigned()->comment('編號');
             $table->string('type',191)->nullable(false)->comment('車型');
             $table->tinyInteger('bid')->unsigned()->nullable(false)->comment('品牌');
             $table->integer('horsepower')->nullable(true)->comment('馬力');
-           
             $table->integer('cc')->nullable(false)->comment('CC數');
-            $table->double('money')->unsigned()->nullable(false)->comment('價錢');
+            $table->double('money')->unsigned()->nullable(false)->comment('價錢(萬)');
             $table->double('variable_s')->unsigned()->nullable(false)->comment('變速系統');
             $table->tinyInteger('seats')->unsigned()->nullable(true)->comment('座位');
             $table->string('nationality',191)->nullable(false)->comment('國家');
